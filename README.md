@@ -86,6 +86,8 @@ This is the place for you to write reflections:
 3. Rust enforces thread safety, and DashMap is useful because it allows multiple threads to read and write safely without locks. A Singleton pattern could still be used, but we would need to manually handle thread safety, which can slow down performance. Since DashMap is already optimized for concurrent access, it is a better choice for managing the `SUBSCRIBERS` list in a multi-threaded environment.
 
 #### Reflection Publisher-2
+1. Separating Service and Repository from the Model follows the Separation of Concerns principle, making the code easier to maintain. The Repository handles data storage (database interactions), while the Service contains business logic.
 
+2. If we only use the Model, it would mix database queries, business logic, and data representation, leading to a complex code structure. Everything would be tightly coupled, making it harder to test, modify, or switch databases without affecting the entire system.
 
 #### Reflection Publisher-3
