@@ -90,4 +90,11 @@ This is the place for you to write reflections:
 
 2. If we only use the Model, it would mix database queries, business logic, and data representation, leading to a complex code structure. Everything would be tightly coupled, making it harder to test, modify, or switch databases without affecting the entire system.
 
+3. Yes, i've actually used Postman a few times on my previous projects. It is very useful when we're trying to send requests, debugging, or even checking responses. Features like collections (grouping requests), environment variables (storing API keys or URLs), and automated testing are very useful in project development, making it potentially useful to my Group Project or other future projects.
+
 #### Reflection Publisher-3
+1. The tutorial uses the Push Model because the NotificationService sends notifications directly to subscribers when an event happens, like when a product is created or deleted. Subscribers don't request updates; they just receive them automatically.
+
+2. If we used the Pull Model, subscribers would have to check for updates themselves instead of receiving notifications immediately. The advantage is that they can decide when to fetch data, reducing unnecessary updates. The disadvantage is that if they don’t check frequently, they might miss important updates or get outdated information.
+
+3. Without multi-threading, the program would handle notifications one at a time, blocking other tasks until each notification is sent. This would slow down the entire system, especially if sending notifications takes time.
