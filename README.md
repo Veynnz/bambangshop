@@ -77,7 +77,15 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. The Observer pattern is a design pattern where an object (called the Subject) maintains a list of `Observers` that need to be notified when its state changes. This pattern is useful when multiple parts of a system need to react to changes in one object without tightly coupling them.
+
+    In the Observer pattern, an interface (or trait in Rust) is useful when multiple types of `subscribers` exist, each implementing different behaviors when notified. However, in BambangShop's case, if all `subscribers` behave the same way (i.e., just storing an ID and a URL), a single Subscriber struct is enough. Adding a trait would only make the code more complex without any real benefit.
+
+2. Since each subscriber is identified by a unique url, using a Vec (list) would require searching through the entire list every time we add, find, or remove a subscriber, which is inefficient. Using DashMap (a map/dictionary) allows us to quickly access, insert, and remove `subscribers` by their url, making operations much more efficient.
+
+3. Rust enforces thread safety, and DashMap is useful because it allows multiple threads to read and write safely without locks. A Singleton pattern could still be used, but we would need to manually handle thread safety, which can slow down performance. Since DashMap is already optimized for concurrent access, it is a better choice for managing the `SUBSCRIBERS` list in a multi-threaded environment.
 
 #### Reflection Publisher-2
+
 
 #### Reflection Publisher-3
