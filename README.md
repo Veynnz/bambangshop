@@ -89,8 +89,3 @@ This is the place for you to write reflections:
 
 
 #### Reflection Publisher-3
-<<<<<<< HEAD
-=======
-=======
-# bambangshop
->>>>>>> 5471f87 (Docs: Added Reflection Publisher-1)
